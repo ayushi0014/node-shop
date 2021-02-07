@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+
 const product = require('../models/product');
 const multer = require('multer');
 const storage = multer.diskStorage({

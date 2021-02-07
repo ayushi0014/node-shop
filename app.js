@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-
+const userRoutes = require('./api/routes/user');
 
 //db connections
 mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_ATLAS_PWD}@cluster0.tq0xu.mongodb.net/shop?retryWrites=true&w=majority`,
@@ -45,6 +45,7 @@ app.use((req, res, next) => {
 //Routes which should handle requests
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found!');
